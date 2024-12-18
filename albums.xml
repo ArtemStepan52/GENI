@@ -1,0 +1,34 @@
+<albums>
+  <album>
+    <id>1</id>
+    <title>Album Title 1</title>
+    <artist>Artist Name 1</artist>
+    <year>2020</year>
+    <tracks>
+      <track>
+        <trackNumber>1</trackNumber>
+        <trackTitle>Track 1</trackTitle>
+      </track>
+      <track>
+        <trackNumber>2</trackNumber>
+        <trackTitle>Track 2</trackTitle>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <id>2</id>
+    <title>Album Title 2</title>
+    <artist>Artist Name 2</artist>
+    <year>2021</year>
+    <tracks>
+      <track>
+        <trackNumber>1</trackNumber>
+        <trackTitle>Track A</trackTitle>
+      </track>
+      <track>
+        <trackNumber>2</trackNumber>
+        <trackTitle>Track V</trackTitle>
+      </track>
+    </tracks>
+  </album>
+</albums>

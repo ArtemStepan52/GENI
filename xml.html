@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Музыкальные Альбомы</title>
+  <style>
+    .album-info {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Музыкальные Альбомы</h1>
+
+  <div>
+    <button onclick="toggleAlbumInfo(1)">Показать/Скрыть информацию об альбоме 1 (CD)</button>
+    <button onclick="toggleAlbumInfo(2)">Показать/Скрыть информацию об альбоме 2 (CD)</button>
+  </div>
+
+  <div id="albumInfo1" class="album-info">
+    <h2>Информация о альбоме 1</h2>
+    <p><strong>Название:</strong> <span id="title1"></span></p>
+    <p><strong>Исполнитель:</strong> <span id="artist1"></span></p>
+    <p><strong>Год выпуска:</strong> <span id="year1"></span></p>
+    <ul id="tracks1"></ul>
+  </div>
+
+  <div id="albumInfo2" class="album-info">
+    <h2>Информация о альбоме 2</h2>
+    <p><strong>Название:</strong> <span id="title2"></span></p>
+    <p><strong>Исполнитель:</strong> <span id="artist2"></span></p>
+    <p><strong>Год выпуска:</strong> <span id="year2"></span></p>
+    <ul id="tracks2"></ul>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

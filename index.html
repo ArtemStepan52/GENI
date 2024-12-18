@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Александр">
+    <title>Моя вёрстка VLAN</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Анимация наверху страницы для заголовка */
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Применение анимации к заголовку */
+        h1 {
+            animation: slideIn 1s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        /* Стиль для элементов, появляющихся при прокрутке */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        /* Стиль при появлении элементов на экране */
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Стили для кнопки определения локации */
+        .location-button {
+            padding: 10px 20px;
+            background-color: #1cbc11;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .location-button:hover {
+            background-color: #14a20a;
+        }
+
+        /* Стиль для вывода локации */
+        #location-output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Стиль для кнопки перехода */
+        .navigate-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .navigate-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="scroll-animation">Описание технологии VLAN</h1>
+        <hr>
+
+        <!-- Навигационное меню -->
+        <nav class="scroll-animation">
+            <ul class="main-menu">
+                <li><a href="#">Услуги</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Услуга 1</a></li>
+                        <li><a href="#">Услуга 2</a></li>
+                        <li><a href="#">Услуга 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">О нас</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Наша команда</a></li>
+                        <li><a href="#">Сертификаты</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <h2 class="scroll-animation">Ролики на YouTube о VLAN</h2>
+        <ul class="scroll-animation">
+            <li><a href="https://www.youtube.com/watch?v=ANCaJTtrgEI&t=2s&ab_channel=Essa%27sCyberCafe" target="_blank">Введение в VLAN</a></li>
+            <li><a href="https://www.youtube.com/watch?v=AWCagiMb5iw&ab_channel=ДавыдРыленков" target="_blank">Настройка VLAN на Cisco</a></li>
+            <li><a href="https://www.youtube.com/watch?v=tbg1JiTRBSQ&ab_channel=MerionAcademy" target="_blank">Примеры использования VLAN</a></li>
+        </ul>
+
+        <h2 class="scroll-animation">Страницы сайта о VLAN</h2>
+        <ol class="scroll-animation">
+            <li><a href="str1.html" target="_blank">Таблица VLAN</a></li>
+            <li><a href="str2.html" target="_blank">Описание и форматирование текста</a></li>
+            <li><a href="str3.html" target="_blank">Свободная страница</a></li>
+        </ol>
+
+        <h2 class="scroll-animation">Изображение</h2>
+        <img src="in.jpg" alt="Извините, но здесь должна быть картинка" width="600" class="scroll-animation">
+        
+        <!-- Форма регистрации -->
+        <div class="form-container scroll-animation">
+            <h2>Регистрация</h2>
+            <form action="register.php" method="POST">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <button type="submit">Регистрация</button>
+                
+
+
+                
+            </form>
+            <button class="button" onclick="window.location.href='login.html'">Войти</button>
+        </div>
+
+        <!-- Кнопка для определения локации -->
+        <button class="location-button scroll-animation" onclick="getLocation()">Показать мою локацию</button>
+        <div id="location-output" class="scroll-animation"></div>
+
+        <!-- Кнопка для перехода на fetch.html -->
+        <button class="location-button scroll-animation" onclick="window.location.href='fetch.html'">Перейти к Fetch API</button>
+        <button class="location-button scroll-animation" onclick="window.location.href='colour.html'">Смена фона</button>
+        <button class="location-button scroll-animation" onclick="window.location.href='xml.html'">Альбомы</button>
+    </div>
+
+    <script>
+        // Функция для получения и отображения локации
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById("location-output").innerHTML = "Геолокация не поддерживается вашим браузером.";
+            }
+        }
+
+        // Функция для отображения координат
+        function showPosition(position) {
+            document.getElementById("location-output").innerHTML =
+                "Широта: " + position.coords.latitude + "<br>Долгота: " + position.coords.longitude;
+        }
+
+        // Функция для обработки ошибок геолокации
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById("location-output").innerHTML = "Запрос на определение местоположения отклонён.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById("location-output").innerHTML = "Информация о местоположении недоступна.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById("location-output").innerHTML = "Запрос на определение местоположения завершился по тайм-ауту.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById("location-output").innerHTML = "Произошла неизвестная ошибка.";
+                    break;
+            }
+        }
+
+        // Анимация появления при прокрутке
+        function animateOnScroll() {
+            const scrollElements = document.querySelectorAll(".scroll-animation");
+
+            scrollElements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                
+                // Добавляем класс visible, когда элемент в видимой области
+                if (rect.top < window.innerHeight - 50 && rect.bottom > 0) {
+                    el.classList.add("visible");
+                } else {
+                    // Убираем класс visible, когда элемент выходит из видимой области
+                    el.classList.remove("visible");
+                }
+            });
+        }
+
+        // Запуск анимации при скролле и загрузке страницы
+        window.addEventListener("scroll", animateOnScroll);
+        window.addEventListener("load", animateOnScroll);
+    </script>
+    <style>
+        .container {
+            padding-bottom: 100px; 
+        }
+    </style>
+</body>
+</html>

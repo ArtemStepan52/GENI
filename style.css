@@ -1,0 +1,263 @@
+/* Общие стили для всей страницы */
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f8f8f8; /* Цвет фона страницы */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh; 
+}
+
+/* Стили для контейнера */
+.container {
+    width: 80%; 
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    margin-top: 20px;
+}
+       /* Основные стили для меню */
+       nav {
+        background-color: #333;
+    }
+
+    .main-menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .main-menu > li {
+        display: inline-block;
+        position: relative;
+    }
+
+    .main-menu a {
+        display: block;
+        padding: 15px 25px;
+        color: #fff;
+        text-decoration: none;
+        background-color: #444;
+    }
+
+    .main-menu a:hover {
+        background-color: #555;
+    }
+
+    /* Стиль для выпадающих меню */
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #444;
+        width: 200px;
+    }
+
+    .dropdown li {
+        width: 100%;
+    }
+
+    .dropdown a {
+        padding: 12px 20px;
+        background-color: #444;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .dropdown a:hover {
+        background-color: #555;
+    }
+
+    .main-menu > li:hover .dropdown {
+        display: block;
+    }
+
+    /* Стили для заголовков */
+    h1 {
+        color: #004d9b;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        color: #002fff;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    /* Стили для горизонтальной линии */
+    hr {
+        border: 2px solid blue;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Стили для списков */
+    ul, ol {
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+
+    ul li, ol li {
+        margin: 10px 0;
+    }
+
+    /* Стили для ссылок */
+    a {
+        text-decoration: none;
+        color: #00179c;
+        font-size: 18px;
+    }
+
+    a:hover {
+        color: #ff6347;
+    }
+
+    /* Стили для изображений */
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+    }
+
+    /* Стили для параграфов */
+    p {
+        font-size: 16px;
+        color: #444444;
+        line-height: 1.6;
+    }
+        /* Стили для формы регистрации */
+        .form-container {
+            background-color: #fff;
+            width: 320px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+        }
+
+        .form-container input::placeholder {
+            color: rgba(0, 0, 0, 0.5); 
+            font-style: italic;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1cbc11;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 13px;
+        }
+
+        .form-container button:hover {
+            background-color: #14a20a;
+        }
+
+.form-container input::placeholder {
+    color: rgba(0, 0, 0, 0.5); 
+    font-style: italic;
+}
+
+/* Стили для кнопки */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1cbc11; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #14a20a; 
+}
+
+/* Стили для заголовков */
+h1 {
+    color: #004d9b;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #002fff;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Стили для горизонтальной линии */
+hr {
+    border: 2px solid blue;
+    width: 100%; 
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Стили для списков */
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+
+ul li, ol li {
+    margin: 10px 0;
+}
+
+/* Стили для ссылок */
+a {
+    text-decoration: none;
+    color: #00179c; 
+    font-size: 18px;
+}
+
+a:hover {
+    color: #ff6347; 
+}
+
+/* Стили для изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    margin-top: 20px;
+}
+
+/* Стили для параграфов */
+p {
+    font-size: 16px; 
+    color: #444444; 
+    line-height: 1.6; 
+}

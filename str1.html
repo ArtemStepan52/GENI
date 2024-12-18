@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Александр">
+    <title>Таблица VLAN</title>
+    <style>
+        /*Стили для кнопки перехода на главную*/
+        .home-button {
+            padding: 1em 2em;  
+            font-size: 1em;    
+            border-radius: 0.5em; 
+            background-color: #1cbc11; 
+            color: white;     
+            border: none;     
+            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); 
+            cursor: pointer;  
+            transition: background-color 0.3s ease; 
+        }
+
+        /* Эффект при наведении*/
+        .home-button:hover {
+            background-color: #14a20a; 
+        }
+
+        /* Стили для заголовков*/
+        h1 {
+            color: #004d9b; 
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /*Стили для горизонтальной линии */
+        hr {
+            border: 2px solid blue;
+            width: 100%; 
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Стили для таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        /* Стили для изображения */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        /*Стили для навигации*/
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            text-align: center; /* Центрируем меню*/
+        }
+
+        li {
+            position: relative;
+            display: inline-block;
+        }
+
+        a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #444;
+        }
+
+        /* Скрыть выпадающие меню по умолчанию */
+        ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 180px;
+        }
+
+        /*Показать выпадающее меню при наведении */
+        li:hover > ul {
+            display: block;
+        }
+
+        /* Стиль для вложенных ссылок в выпадающем меню */
+        li a {
+            padding: 10px;
+        }
+
+        /* Стили для вложенных пунктов*/
+        li li a {
+            background-color: #444;
+        }
+
+        li li a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <ul>
+        <li><a href="#">Таблица</a></li>
+        <li>
+            <a href="#">Технологии</a>
+            <ul>
+                <li><a href="#">VLAN</a></li>
+                <li><a href="#">IP-адресация</a></li>
+                <li><a href="#">Маршрутизация</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Контакты</a></li>
+    </ul>
+
+    <h1>Таблица VLAN</h1>  
+    <hr>
+    <table>
+        <tr>
+            <th>№</th>
+            <th>Имя VLAN</th>
+            <th>ID VLAN</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Management</td>
+            <td>100</td>
+            <td>Управление сетевым оборудованием</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Sales</td>
+            <td>200</td>
+            <td>Сеть для отдела продаж</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Engineering</td>
+            <td>300</td>
+            <td>Сеть для инженерного отдела</td>
+        </tr>
+    </table>
+    <hr>
+    <img src="vl1.jpg" alt="Извините, но здесь должна быть картинка" width="600">
+    <hr>
+    <!-- Кнопка для перехода на главную страницу -->
+    <a href="index.html">
+        <button class="home-button">На главную страницу</button>
+    </a>
+
+</body>
+</html>
+

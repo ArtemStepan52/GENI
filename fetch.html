@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example</title>
+</head>
+<body>
+    <h1>Fetch API</h1>
+    <div id="content">Загрузка...</div>
+
+    <script>
+        // Используем Fetch API для загрузки содержимого файла
+        fetch('fetch_api.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Ошибка при загрузке файла');
+                }
+                return response.text();
+            })
+            .then(text => {
+                document.getElementById('content').textContent = text;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                document.getElementById('content').textContent = 'Не удалось загрузить содержимое';
+            });
+    </script>
+</body>
+</html>

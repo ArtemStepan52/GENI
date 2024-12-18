@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смена фона</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #colorInfo {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Измените цвет фона</h1>
+    <button onclick="changeBackgroundColor()">Смена фона</button>
+    <div id="colorInfo"></div>
+
+    <script>
+        // Функция для генерации случайного цвета
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Функция для изменения фона и отображения информации о цвете
+        function changeBackgroundColor() {
+            // Генерируем случайный цвет
+            const randomColor = getRandomColor();
+            
+            // Меняем цвет фона
+            document.body.style.backgroundColor = randomColor;
+
+            // Отображаем информацию о текущем цвете
+            const colorInfo = document.getElementById('colorInfo');
+            colorInfo.innerHTML = `Цвет на фоне: ${randomColor} (${getColorName(randomColor)})`;
+        }
+
+        // Функция для возвращения имени цвета по его HEX значению
+        function getColorName(hex) {
+            const colorNames = {
+                "#ffffff": "Белый",
+                "#000000": "Черный",
+                "#ff0000": "Красный",
+                "#00ff00": "Зеленый",
+                "#0000ff": "Синий",
+                "#ffff00": "Желтый",
+                "#ff00ff": "Пурпурный",
+                "#00ffff": "Циан",
+                "#808080": "Серый",
+                "#c0c0c0": "Серебристый"
+            };
+            return colorNames[hex.toLowerCase()] || "другой цвет";
+        }
+    </script>
+</body>
+</html>
